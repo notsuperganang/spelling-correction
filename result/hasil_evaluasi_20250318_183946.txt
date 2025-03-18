@@ -1,0 +1,148 @@
+Memulai sistem koreksi ejaan...
+Memuat korpus...
+Korpus dimuat: 32198 kata unik, 1115585 total kata
+Menghitung frekuensi bigram...
+Jumlah bigram unik: 390694
+
+========= EVALUASI DENGAN ALGORITMA LEVENSHTEIN DASAR =========
+
+Evaluasi dengan file spell-testset1.txt...
+  Jumlah pasangan kata uji: 270
+  Akurasi: 0.7481
+  Jumlah benar: 202 dari 270
+  Waktu eksekusi: 3.97 detik
+
+  Contoh prediksi:
+    1. contenpted -> contented (seharusnya contented) ✓
+    2. contende -> contended (seharusnya contented) ✗
+    3. contended -> contended (seharusnya contented) ✗
+    4. contentid -> contented (seharusnya contented) ✓
+    5. begining -> beginning (seharusnya beginning) ✓
+
+  Analisis jenis kesalahan:
+    substitution: 11 (16.2%)
+    insertion: 5 (7.4%)
+    deletion: 20 (29.4%)
+    transposition: 2 (2.9%)
+    multiple: 4 (5.9%)
+    unknown: 26 (38.2%)
+
+  Contoh kesalahan per tipe:
+    substitution:
+      1. contended -> contended (seharusnya contented)
+      2. juise -> guise (seharusnya juice)
+      3. transportibility -> transportibility (seharusnya transportability)
+    insertion:
+      1. remined -> remained (seharusnya remind)
+      2. dessiccate -> dessiccate (seharusnya desiccate)
+      3. laught -> caught (seharusnya laugh)
+    deletion:
+      1. juce -> june (seharusnya juice)
+      2. localy -> local (seharusnya locally)
+      3. futher -> father (seharusnya further)
+    transposition:
+      1. jucie -> julie (seharusnya juice)
+      2. pomes -> comes (seharusnya poems)
+    multiple:
+      1. perpul -> peril (seharusnya purple)
+      2. muinets -> mines (seharusnya minutes)
+      3. courtens -> countess (seharusnya curtains)
+    unknown:
+      1. contende -> contended (seharusnya contented)
+      2. proplen -> people (seharusnya problem)
+      3. guic -> guns (seharusnya juice)
+
+Evaluasi dengan file spell-testset2.txt...
+  Jumlah pasangan kata uji: 400
+  Akurasi: 0.6750
+  Jumlah benar: 270 dari 400
+  Waktu eksekusi: 7.16 detik
+
+  Contoh prediksi:
+    1. apeal -> appeal (seharusnya appeal) ✓
+    2. emploies -> employed (seharusnya employees) ✗
+    3. encorage -> encourage (seharusnya encourage) ✓
+    4. perminant -> permanent (seharusnya permanent) ✓
+    5. mathematicaly -> mathematical (seharusnya mathematically) ✗
+
+  Analisis jenis kesalahan:
+    substitution: 14 (10.8%)
+    insertion: 7 (5.4%)
+    deletion: 48 (36.9%)
+    transposition: 4 (3.1%)
+    multiple: 27 (20.8%)
+    unknown: 30 (23.1%)
+
+  Contoh kesalahan per tipe:
+    substitution:
+      1. adabtable -> adabtable (seharusnya adaptable)
+      2. compased -> composed (seharusnya compared)
+      3. noe -> not (seharusnya now)
+    insertion:
+      1. latter -> latter (seharusnya later)
+      2. cleark -> clear (seharusnya clerk)
+      3. generataed -> generate (seharusnya generated)
+    deletion:
+      1. mathematicaly -> mathematical (seharusnya mathematically)
+      2. alow -> low (seharusnya allow)
+      3. traditionaly -> traditional (seharusnya traditionally)
+    transposition:
+      1. unresloved -> unresloved (seharusnya unresolved)
+      2. subtrcat -> subtrcat (seharusnya subtract)
+      3. disaggreagte -> disaggreagte (seharusnya disaggregate)
+    multiple:
+      1. thermawhere -> thermawhere (seharusnya thermawear)
+      2. wagted -> wanted (seharusnya weighted)
+      3. avaiblity -> avaiblity (seharusnya availability)
+    unknown:
+      1. emploies -> employed (seharusnya employees)
+      2. hierachial -> hierachial (seharusnya hierarchal)
+      3. academicly -> academic (seharusnya academically)
+
+========= EVALUASI DENGAN KOREKSI BERBASIS KONTEKS =========
+
+Evaluasi konteks dengan file spell-testset1.txt...
+  Akurasi dengan konteks: 0.7444
+  Jumlah benar: 201 dari 270
+  Waktu eksekusi: 4.04 detik
+
+  Contoh prediksi dengan konteks:
+    1. contenpted -> contented (seharusnya contented) ✓
+    2. contende -> contended (seharusnya contented) ✗
+    3. contended -> contended (seharusnya contented) ✗
+    4. contentid -> contented (seharusnya contented) ✓
+    5. begining -> beginning (seharusnya beginning) ✓
+
+========= PELATIHAN MODEL HYBRID DENGAN KORPUS =========
+Memuat data pelatihan dari korpus...
+Data pelatihan dimuat: 39119 pasangan kata
+Memuat data pengujian...
+Data pengujian dimuat: 670 pasangan kata
+Model hybrid berhasil dilatih dengan 39119 pasangan kata.
+
+========= EVALUASI MODEL HYBRID =========
+Akurasi model hybrid: 0.7761
+Jumlah benar: 520 dari 670
+
+Evaluasi konteks dengan file spell-testset2.txt...
+  Akurasi dengan konteks: 0.6800
+  Jumlah benar: 272 dari 400
+  Waktu eksekusi: 6.62 detik
+
+  Contoh prediksi dengan konteks:
+    1. apeal -> appeal (seharusnya appeal) ✓
+    2. emploies -> employed (seharusnya employees) ✗
+    3. encorage -> encourage (seharusnya encourage) ✓
+    4. perminant -> permanent (seharusnya permanent) ✓
+    5. mathematicaly -> mathematically (seharusnya mathematically) ✓
+
+========= PELATIHAN MODEL HYBRID DENGAN KORPUS =========
+Memuat data pelatihan dari korpus...
+Data pelatihan dimuat: 39119 pasangan kata
+Memuat data pengujian...
+Data pengujian dimuat: 670 pasangan kata
+Model hybrid berhasil dilatih dengan 39119 pasangan kata.
+
+========= EVALUASI MODEL HYBRID =========
+Akurasi model hybrid: 0.7761
+Jumlah benar: 520 dari 670

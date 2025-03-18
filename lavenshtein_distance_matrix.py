@@ -7,6 +7,7 @@ from datetime import datetime
 import io
 import sys
 
+# Class untuk membuat unit yang mengingat output dan menyimpannya kedalam sebuah file .txt
 class OutputCapture:
     def __init__(self):
         self.log_data = []
